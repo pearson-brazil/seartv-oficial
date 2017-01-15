@@ -1,12 +1,26 @@
 package br.com.pearson.seartv.ui;
 
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import br.com.pearson.seartv.R;
+import butterknife.Bind;
 
 public class HomeActivity extends BaseActivity {
+
+    @Bind(R.id.tabLayout)
+    TabLayout tabLayout;
+
+    @Bind(R.id.pager)
+    ViewPager viewPager;
+
+    ViewPagerAdapter adapter;
+
+    private static final int TAB_GENDERS = 0;
+    private static final int TAB_MOVIES = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -14,6 +28,48 @@ public class HomeActivity extends BaseActivity {
         setContentView(R.layout.activity_home);
         setHomeButton();
         setToolbarTitle(R.string.movies);
+
+        // Adicionando Tabs com título em cada uma delas
+        tabLayout.addTab(tabLayout.newTab().setText(getResources().getString(R.string.genres)));
+        tabLayout.addTab(tabLayout.newTab().setText(getResources().getString(R.string.movies)));
+
+        // Criando o Pager Adapter. É ele quem gerencia as abas
+        adapter = new ViewPagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
+        viewPager.setAdapter(adapter);
+
+        // Este listener permite que as abas possam acompanhar o movimento do swipe
+        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+
+        // Este listener é utilizado para alterar o título da toolbar de acordo com a aba selecionada
+        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                viewPager.setCurrentItem(tab.getPosition());
+                switch (tab.getPosition()) {
+                    case TAB_GENDERS:
+                        setToolbarTitle(R.string.genres);
+                        break;
+                    case TAB_MOVIES:
+                        setToolbarTitle(R.string.movies);
+                        break;
+                    default:
+                        return;
+                }
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+
+        // Inicia o app na aba 'Filmes' selecionada
+        tabLayout.getTabAt(TAB_MOVIES).select();
     }
 
     @Override
