@@ -4,14 +4,12 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.widget.TextView;
-
-import br.com.pearson.seartv.R;
+import br.com.seartv.R;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class BaseActivity extends AppCompatActivity {
-
-    @Nullable
+    
     @Bind(R.id.toolbar)
     Toolbar toolbar;
     @Bind(R.id.toolbar_title)
