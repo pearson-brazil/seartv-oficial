@@ -6,7 +6,7 @@ import android.content.Context;
 import android.view.Window;
 import android.widget.TextView;
 
-import br.com.seartv.R;
+import br.com.pearson.seartv.R;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;

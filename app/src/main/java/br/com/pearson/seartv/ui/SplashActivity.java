@@ -3,7 +3,7 @@ package br.com.pearson.seartv.ui;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import br.com.seartv.R;
+import br.com.pearson.seartv.R;
 
 public class SplashActivity extends Activity {
 

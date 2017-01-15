@@ -4,13 +4,14 @@ import android.content.Context;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import br.com.seartv.R;
+import br.com.pearson.seartv.R;
 
 /**
  * Created by Willian on 15/01/2017.
  */
 
 public class MovieDetailsActivity extends BaseActivity {
+
     private Context context;
 
     @Override
@@ -48,5 +49,4 @@ public class MovieDetailsActivity extends BaseActivity {
     private void fillInformation() {
 
     }
-
 }

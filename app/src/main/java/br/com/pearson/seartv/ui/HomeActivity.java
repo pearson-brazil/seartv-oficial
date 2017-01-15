@@ -6,7 +6,7 @@ import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import br.com.seartv.R;
+import br.com.pearson.seartv.R;
 import butterknife.Bind;
 
 public class HomeActivity extends BaseActivity {
