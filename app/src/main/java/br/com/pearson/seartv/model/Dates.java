@@ -1,4 +1,4 @@
-package br.com.seartv.model;
+package br.com.pearson.seartv.model;
 
 public class Dates {
     private String minimum;

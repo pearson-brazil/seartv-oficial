@@ -1,4 +1,4 @@
-package br.com.seartv.model;
+package br.com.pearson.seartv.model;
 
 import java.io.Serializable;
 import java.util.List;
