@@ -1,10 +1,12 @@
 package br.com.pearson.seartv.ui;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
 import br.com.pearson.seartv.R;
+import butterknife.OnClick;
 
 /**
  * Created by Willian on 15/01/2017.
@@ -48,5 +50,10 @@ public class MovieDetailsActivity extends BaseActivity {
 
     private void fillInformation() {
 
+    }
+
+    @OnClick(R.id.cast)
+    public void onClickCast() {
+        startActivity(new Intent(this, CastMovieListActivity.class));
     }
 }

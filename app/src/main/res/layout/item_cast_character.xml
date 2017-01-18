@@ -64,7 +64,8 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
                 android:layout_marginLeft="98dp"
-                android:gravity="center">
+                android:gravity="center"
+                android:id="@+id/details_link">
 
                 <TextView
                     android:id="@+id/details"
@@ -75,11 +76,11 @@
                     style="@style/DetailsCastStyle"/>
 
                 <ImageView
-                    android:id="@+id/details_link"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingRight="20dp"
-                    android:src="@drawable/ic_external" />
+                    android:src="@drawable/ic_external"
+                    android:id="@+id/external_link"/>
             </LinearLayout>
 
         </LinearLayout>

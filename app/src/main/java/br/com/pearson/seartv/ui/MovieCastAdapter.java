@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -78,7 +79,8 @@ class CastMovieAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         public TextView name;
         public TextView characterName;
         public ProgressBar loading;
-        public ImageView detailsLink;
+        public ImageView externalLinkIcon;
+        public LinearLayout detailsLink;
 
         public CastMemberViewHolder(final View itemView) {
             super(itemView);
@@ -87,7 +89,8 @@ class CastMovieAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             name = (TextView) itemView.findViewById(R.id.name);
             characterName = (TextView) itemView.findViewById(R.id.character_name);
             loading = (ProgressBar) itemView.findViewById(R.id.portrait_loading);
-            detailsLink = (ImageView) itemView.findViewById(R.id.details_link);
+            externalLinkIcon = (ImageView) itemView.findViewById(R.id.external_link);
+            detailsLink = (LinearLayout) itemView.findViewById(R.id.details_link);
         }
     }
 }
